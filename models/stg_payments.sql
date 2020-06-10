@@ -5,4 +5,4 @@ select
     status,
     round(amount / 100, 2) as amount
 
-from raw.stripe.payment
+from {{ source('stripe', 'payments') }}
