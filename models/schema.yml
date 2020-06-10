@@ -11,7 +11,15 @@ models:
           - not_null
       - name: first_order_date
         description: NULL when a customer has not yet placed and order.
-          
+  - name: orders
+    description: one record per order
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
   - name: stg_customers
     description: This model cleans up customer data
     columns:
@@ -20,7 +28,7 @@ models:
         tests:
           - unique
           - not_null
-          
+
   - name: stg_orders
     description: This model cleans up order data
     columns:
